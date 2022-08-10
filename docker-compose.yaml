@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app:
+    image: learning-docker/node:v1
+    container_name: apptest
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+  mongodb:
+    image: mongo
+    restart: always
+    ports: [ "27020-27022:27017-27019" ]
+    hostname: mongo
+    volumes:
+      - /home/cuong/NodeProjects/learning-docker/docker-node/Data:/data/db
+  
