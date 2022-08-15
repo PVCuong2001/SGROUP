@@ -6,7 +6,7 @@ const createDatabase = async () => {
     if (!databaseConnection) {
         databaseConnection = await connectDB();
     }
-    const db = databaseConnection.db('sgroup');
+    const db = databaseConnection.db(process.env.DB_NAME||'sgroup');
     db.createCollection("users").catch((err) => {
         console.log(err.message);
     });
