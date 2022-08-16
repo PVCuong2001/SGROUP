@@ -24,7 +24,7 @@ services:
     container_name: dbtest
     restart: unless-stopped
     ports: [ "27020-27022:27017-27019" ]
-    hostname: mongo
+    hostname: db
     volumes:
       - .docker/data/db:/data/db
     networks:
